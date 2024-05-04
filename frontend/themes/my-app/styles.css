@@ -1,0 +1,14 @@
+@import url('./main-layout.css');
+@import url('./views/searchforacompany-view.css');    html {
+      --lumo-primary-color: hsl(202, 77%, 46%);
+      --lumo-primary-color-50pct: hsla(202, 77%, 46%, 0.5);
+      --lumo-primary-color-10pct: hsla(202, 77%, 46%, 0.1);
+      --lumo-border-radius-s: calc(var(--lumo-size-m) / 6);
+      --lumo-border-radius-m: calc(var(--lumo-size-m) / 2);
+      --lumo-border-radius-l: var(--lumo-size-m);
+      --lumo-line-height-m: 1.8;
+      --lumo-line-height-s: 1.5;
+      --lumo-line-height-xs: 1.3;
+      --lumo-primary-text-color: hsl(206, 90%, 52%);
+
+    }
