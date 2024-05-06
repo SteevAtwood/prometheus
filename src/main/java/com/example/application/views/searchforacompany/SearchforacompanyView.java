@@ -52,6 +52,7 @@ public class SearchforacompanyView extends VerticalLayout {
 
         Button searchButton = new Button("Получить данные");
         searchButton.addClickListener(e -> {
+
             String InnParam = searchField.getValue();
             String jsonData = companyService.getData(InnParam);
             ObjectMapper objectMapper = new ObjectMapper();
