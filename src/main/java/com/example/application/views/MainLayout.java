@@ -2,6 +2,7 @@ package com.example.application.views;
 
 import com.example.application.data.User;
 import com.example.application.security.AuthenticatedUser;
+import com.example.application.views.history.HistoryView;
 import com.example.application.views.searchforacompany.SearchforacompanyView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -71,7 +72,10 @@ public class MainLayout extends AppLayout {
         if (accessChecker.hasAccess(SearchforacompanyView.class)) {
             nav.addItem(new SideNavItem("Search for a company", SearchforacompanyView.class,
                     LineAwesomeIcon.FILTER_SOLID.create()));
+        }
 
+        if (accessChecker.hasAccess(HistoryView.class)) {
+            nav.addItem(new SideNavItem("History", HistoryView.class, LineAwesomeIcon.STAR_SOLID.create()));
         }
 
         return nav;

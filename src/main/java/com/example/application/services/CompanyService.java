@@ -2,12 +2,15 @@ package com.example.application.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.application.data.History;
 import com.example.application.repository.HistoryRepository;
 import com.example.application.security.AuthenticatedUser;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import jakarta.transaction.Transactional;
 
@@ -129,6 +132,14 @@ public class CompanyService {
         history.setFileName(fileName);
 
         return historyRepository.save(history);
+    }
+
+    public Page<History> list(Pageable pageable) {
+        return historyRepository.findAll(pageable);
+    }
+
+    public Page<History> list(Pageable pageable, Specification<History> filter) {
+        return historyRepository.findAll(filter, pageable);
     }
 
     // public String getData() {
