@@ -44,8 +44,9 @@ public class CompanyService {
                 .orElse(null);
 
         Path fileName = fetchData(innParam);
+        String trimmedFileName = fileName.getFileName().toString();
         System.out.println("Сохранение истории для INN: " + innParam);
-        saveHistory(innParam, fileName.toString(), userId);
+        saveHistory(innParam, trimmedFileName, userId);
         System.out.println("История сохранена");
         String result;
         try {

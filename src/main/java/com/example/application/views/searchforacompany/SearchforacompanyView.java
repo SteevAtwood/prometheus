@@ -15,14 +15,15 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
+
+import jakarta.annotation.security.PermitAll;
 
 import java.io.IOException;
 
 @PageTitle("Search for a company")
 @Route(value = "grid-with-filters", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
-@AnonymousAllowed
+@PermitAll
 public class SearchforacompanyView extends VerticalLayout {
 
     private HorizontalLayout searchLine = new HorizontalLayout();
